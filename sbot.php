@@ -7,7 +7,7 @@ $update =file_get_contents("php://input");
 $update =json_decode($update,TRUE);
 
 $text = $update ["message"]["text"];
-$chatID = $update["message"][0]["chat"]["id"];
+$chatID = $update["message"]["chat"]["id"];
 sendMessage($chatID,$text);
 function sendMessage($chatID,$message){
   $url = $globals[website]."/sendMessage?chat_id=".$chatID."&text=.urlencode($message)";
