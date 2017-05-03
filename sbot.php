@@ -6,7 +6,7 @@ $website="https://api.telegram.org/bot".$token;
 $update =file_get_contents("php://input");
 $update =json_decode($update,TRUE);
 
-$text = $update ["message"]["text"];
+$text = $update["message"]["text"];
 $chatID = $update["message"]["chat"]["id"];
 sendMessage($chatID,$text);
 function sendMessage($chatID,$message){
